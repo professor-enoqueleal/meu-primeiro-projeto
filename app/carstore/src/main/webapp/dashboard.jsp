@@ -14,6 +14,7 @@
 
     <br>
 
+<!--
     <table class="table">
         <thead>
             <tr>
@@ -32,6 +33,27 @@
         </tbody>
     </table>
     <div>
+-->
+
+    <div class="container">
+
+        <div class="row">
+            <c:forEach var="car" items="${cars}">
+              <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">${car.name}</h5>
+                    <p class="card-text">${car.color}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <br>
+              </div>
+
+            </c:forEach>
+        </div>
+
+    </div>
 
 </body>
 </html>
