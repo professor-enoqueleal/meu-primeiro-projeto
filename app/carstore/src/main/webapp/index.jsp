@@ -11,14 +11,16 @@
 
             <form action="/create-car" method="post">
 
+                <input type="hidden" name="id" value="${param.id}">
+
                 <div  class="mb-3">
                     <label for="car-name" class="form-label">Name:</label>
-                    <input type="text" name="car-name" id="car-name" class="form-control">
+                    <input type="text" name="car-name" id="car-name" value="${param.name}" class="form-control">
                 </div>
 
                 <div  class="mb-3">
                     <label for="color" class="form-label">Color:</label>
-                    <input type="text" name="color" id="color"  class="form-control">
+                    <input type="text" name="color" id="color" value="${param.color}" class="form-control">
                 </div>
 
                 <button class="btn btn-primary" type="submit">Save</button>

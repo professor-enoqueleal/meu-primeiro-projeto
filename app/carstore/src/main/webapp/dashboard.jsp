@@ -45,6 +45,16 @@
                     <h5 class="card-title">${car.name}</h5>
                     <p class="card-text">${car.color}</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <br>
+                    <form action="/delete-car" method="post">
+                        <input type="hidden" id="id" name="id" value="${car.id}">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+
+                    <span> | </span>
+
+                    <a href="index.jsp?id=${car.id}&name=${car.name}&color=${car.color}">Update</a>
+
                   </div>
                 </div>
                 <br>
