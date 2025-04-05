@@ -57,6 +57,7 @@ public class CarDao {
 
                 Car car = new Car();
                 car.setName(name);
+                car.setId(id);
 
                 cars.add(car);
 
@@ -71,6 +72,31 @@ public class CarDao {
             System.out.println("Erro ao consultar os carros do DB!");
 
             return Collections.emptyList();
+
+        }
+
+    }
+
+    public void deleteCarById(String id) {
+
+        String SQL = "DELETE CAR WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, id);
+
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao remover o registro no DB!");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao remover o registro do DB!");
 
         }
 
